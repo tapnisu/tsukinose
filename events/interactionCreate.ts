@@ -1,13 +1,24 @@
-import { Event, Command } from "../types/mod.ts";
-import { ApplicationCommandInteraction } from "../deps.ts";
+import { Event, Command, Component } from "../types/mod.ts";
+import { Interaction } from "../deps.ts";
 
 const event: Event = {
 	name: "interactionCreate",
-	run: (client, interaction: ApplicationCommandInteraction) => {
-		if (interaction.type != 2) return;
+	run: (client, interaction: Interaction) => {
+		if (interaction.isApplicationCommand()) {
+			const command = client.commands.get(interaction.name);
+			if (command) (command as Command).run(client, interaction);
 
-		const command = client.commands.get(interaction.name);
-		if (command) (command as Command).run(client, interaction);
+			return;
+		}
+
+		if (interaction.isMessageComponent()) {
+			const component = client.components.find((component) =>
+				component.customId.test(interaction.data.custom_id)
+			);
+			if (component) (component as Component).run(client, interaction);
+
+			return;
+		}
 	},
 };
 

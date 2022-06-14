@@ -1,15 +1,15 @@
 import {
 	SlashCommandInteraction,
-	ApplicationCommandInteraction,
+	Interaction,
 	ApplicationCommandOptionBase,
 } from "../deps.ts";
 import ExtendedClient from "../core.ts";
 
 interface Run {
-	(
-		client: ExtendedClient,
-		interaction: SlashCommandInteraction
-	): Promise<ApplicationCommandInteraction>;
+	(client: ExtendedClient, interaction: SlashCommandInteraction):
+		| Promise<Interaction>
+		| Promise<void>
+		| void;
 }
 
 export interface Command {

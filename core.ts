@@ -1,12 +1,14 @@
 import { Client, Collection, GatewayIntents, serve } from "./deps.ts";
-import { Command, Event } from "./types/mod.ts";
+import { Command, Event, Component } from "./types/mod.ts";
 import GetCommands from "./commands/mod.ts";
 import GetEvents from "./events/mod.ts";
+import GetComponents from "./components/mod.ts";
 import env from "./utils/config.ts";
 import server from "./utils/server.ts";
 
 class ExtendedClient extends Client {
 	public commands: Collection<string, Command> = new Collection();
+	public components: Collection<RegExp, Component> = new Collection();
 	public events: Collection<string, Event> = new Collection();
 	public env = env;
 
@@ -19,6 +21,7 @@ class ExtendedClient extends Client {
 
 		GetCommands(this);
 		GetEvents(this);
+		GetComponents(this);
 
 		await serve(server, { port: Number(env.SERVER_PORT) });
 	}
