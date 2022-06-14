@@ -12,9 +12,10 @@
 			<img src="../assets/avatar.png" alt="avatar" />
 			<h1>Tsukinose</h1>
 			<p>Discord bot for various tasks</p>
-			<form
-				action="https://discord.com/api/oauth2/authorize?client_id=977746174574465085&scope=bot+applications.commands&permissions=294208515334"
-			>
+			<form action="https://discord.com/api/oauth2/authorize" method="GET">
+				<input type="hidden" name="client_id" value="977746174574465085" />
+				<input type="hidden" name="scope" value="bot applications.commands" />
+				<input type="hidden" name="permissions" value="294208515334" />
 				<input type="submit" value="Invite bot" />
 			</form>
 		</div>

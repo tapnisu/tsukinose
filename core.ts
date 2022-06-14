@@ -20,7 +20,7 @@ class ExtendedClient extends Client {
 		GetCommands(this);
 		GetEvents(this);
 
-		await serve(server, { port: Number(env.port) });
+		await serve(server, { port: Number(env.SERVER_PORT) });
 	}
 }
 
