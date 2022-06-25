@@ -14,7 +14,7 @@ const command: Command = {
   ],
   run: async (client, interaction) => {
     const user: User | undefined = await client.users.get(
-      interaction.options.find((option) => option.name == "user")?.value
+      interaction.options.find((option) => option.name == "user")?.value,
     );
 
     if (!user) {
