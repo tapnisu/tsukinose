@@ -1,5 +1,5 @@
 <p align="center">
- <img width=300px src="./static/assets/avatar.png" alt="Bot logo">
+ <img width=300px src="./static/assets/img/avatar.png" alt="Bot logo">
  <h1 align="center">Tsukinose</h1>
  <h3 align="center">Discord bot for various tasks</h3>
 </p>
