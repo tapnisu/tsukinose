@@ -11,8 +11,8 @@
 
 # Overview
 
-Vigne is [harmony](https://github.com/harmonyland/harmony) bot, made in
-[Deno](https://deno.land/). Tsukinose is a cute girl from Gabriel DropOut manga
+Tsukinose is [harmony](https://github.com/harmonyland/harmony) bot, made in
+[Deno](https://deno.land/). Vignette April Tsukinose is a cute girl from Gabriel DropOut manga
 :3.
 
 # How to use
