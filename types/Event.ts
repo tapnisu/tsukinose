@@ -5,8 +5,7 @@ interface Run {
   (client: Client, ...args: eventArgs): void;
 }
 
-// deno-lint-ignore no-explicit-any
-type eventArgs = ClientEvents[keyof ClientEvents] | any;
+type eventArgs = ClientEvents[keyof ClientEvents];
 
 export interface Event {
   name: keyof ClientEvents;
