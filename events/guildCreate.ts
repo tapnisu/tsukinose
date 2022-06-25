@@ -16,8 +16,8 @@ const event: Event = {
       .setThumbnail(client.user.avatarURL())
       .setDescription(
         `Type "/" to check bot commands!
-        https://github.com/uwury/vigne.
-        Developed by Alexiy#5027.`
+        https://github.com/uwury/tsukinose.
+        Developed by Alexiy#5027.`,
       );
 
     return channel.send({

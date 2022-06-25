@@ -20,7 +20,7 @@ const command: Command = {
     if (request) {
       const command = client.commands.get(request);
 
-      if (command == undefined) {
+      if (!command) {
         return interaction.reply({
           content: `${request} is not a valid command!`,
           ephemeral: true,
