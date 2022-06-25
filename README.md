@@ -11,14 +11,16 @@
 
 # Overview
 
-Vigne is [harmony](https://github.com/harmonyland/harmony) bot, made in [Deno](https://deno.land/).
-Tsukinose is a cute girl from Gabriel DropOut manga :3.
+Vigne is [harmony](https://github.com/harmonyland/harmony) bot, made in
+[Deno](https://deno.land/). Tsukinose is a cute girl from Gabriel DropOut manga
+:3.
 
 # How to use
 
 ## Already hosted
 
-You can invite bot by [this link](https://discord.com/api/oauth2/authorize?client_id=977746174574465085&scope=bot+applications.commands&permissions=294208515334).
+You can invite bot by
+[this link](https://discord.com/api/oauth2/authorize?client_id=977746174574465085&scope=bot+applications.commands&permissions=294208515334).
 Type "/" to see commands!
 
 ## Host by yourself

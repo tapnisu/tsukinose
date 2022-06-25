@@ -5,12 +5,12 @@ import interactionCreate from "./interactionCreate.ts";
 import messageCreate from "./messageCreate.ts";
 
 const Register = (client: ExtendedClient, event: Event) => {
-	client.events.set(event.name, event);
-	client.on(event.name, event.run.bind(null, client));
+  client.events.set(event.name, event);
+  client.on(event.name, event.run.bind(null, client));
 };
 
 export default (client: ExtendedClient) => {
-	Register(client, ready);
-	Register(client, interactionCreate);
-	Register(client, messageCreate);
+  Register(client, ready);
+  Register(client, interactionCreate);
+  Register(client, messageCreate);
 };

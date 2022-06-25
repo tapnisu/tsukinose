@@ -6,12 +6,12 @@ import help from "./info/help.ts";
 import password from "./utils/password.ts";
 
 const Register = (client: ExtendedClient, command: Command) => {
-	client.commands.set(command.name, command);
+  client.commands.set(command.name, command);
 };
 
 export default (client: ExtendedClient) => {
-	Register(client, genshinCodes);
-	Register(client, coin);
-	Register(client, help);
-	Register(client, password);
+  Register(client, genshinCodes);
+  Register(client, coin);
+  Register(client, help);
+  Register(client, password);
 };
