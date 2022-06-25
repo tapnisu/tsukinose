@@ -1,5 +1,5 @@
 import { Code, Command } from "../../types/mod.ts";
-import { Embed } from "../../deps.ts";
+import { ActionRowComponent, Embed } from "../../deps.ts";
 
 const command: Command = {
   name: "genshincodes",
@@ -12,12 +12,13 @@ const command: Command = {
     ).json();
 
     const codes = response.CODES;
+    const url = "https://genshin.hoyoverse.com/en/gift";
 
     const embed = new Embed()
       .setColor(client.env.BOT_COLOR)
       .setTitle("Genshin codes")
       .setDescription("You can activate them in game, and get rewards!")
-      .setURL("https://genshin.mihoyo.com/en/gift");
+      .setURL(url);
 
     codes.forEach((code: Code) => {
       if (code.is_expired == false) {
@@ -31,7 +32,19 @@ const command: Command = {
       }
     });
 
-    return interaction.reply({ embeds: [embed] });
+    const buttonsRow: ActionRowComponent = {
+      type: 1,
+      components: [
+        {
+          type: 2,
+          url: url,
+          label: "Activate codes online",
+          style: 5,
+        },
+      ],
+    };
+
+    return interaction.reply({ embeds: [embed], components: [buttonsRow] });
   },
 };
 
