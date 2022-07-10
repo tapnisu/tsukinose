@@ -8,6 +8,7 @@ import avatar from "./utils/avatar.ts";
 import user from "./utils/user.ts";
 import manga from "./api/manga.ts";
 import lmgtfy from "./fun/lmgtfy.ts";
+import start from "./music/start.ts";
 
 const Register = (client: ExtendedClient, command: Command) => {
   client.commands.set(command.name, command);
@@ -22,4 +23,5 @@ export default (client: ExtendedClient) => {
   Register(client, user);
   Register(client, manga);
   Register(client, lmgtfy);
+  Register(client, start);
 };
