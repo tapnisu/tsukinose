@@ -7,8 +7,9 @@ import ExtendedClient from "../core.ts";
 
 interface Run {
   (client: ExtendedClient, interaction: SlashCommandInteraction):
-    | Promise<Interaction>
-    | Promise<void>
+    | Promise<Interaction | undefined | void>
+    | Interaction
+    | undefined
     | void;
 }
 

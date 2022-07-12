@@ -5,12 +5,15 @@ import GetEvents from "./events/mod.ts";
 import GetComponents from "./components/mod.ts";
 import env from "./utils/config.ts";
 import server from "./utils/server.ts";
+import { Player } from "./utils/player.ts";
 
 class ExtendedClient extends Client {
   public commands: Collection<string, Command> = new Collection();
   public components: Collection<RegExp, Component> = new Collection();
   public events: Collection<string, Event> = new Collection();
   public env = env;
+
+  public player: Player = {};
 
   public async init() {
     this.connect(this.env.BOT_TOKEN, [
